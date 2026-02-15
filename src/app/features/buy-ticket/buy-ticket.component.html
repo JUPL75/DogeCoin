@@ -1,0 +1,29 @@
+<div class="container">
+    <p>Partenaire du stade de France pour les JO, DogeCoin vous offre <strong>5% de réduction</strong> dès 2 tickets achetés !</p>
+
+    <h2>Ticket de transport</h2>
+    <form (ngSubmit)="validate(ticketDialog)" #ticketForm="ngForm">
+    <div class="form-group">
+      <label for="ticketQuantity">Nombre de tickets :</label>
+      <input
+        type="number"
+        id="ticketQuantity"
+        name="ticketQuantity"
+        min="1"
+        required
+        [(ngModel)]="ticketQuantity"
+      />
+      @if (ticketQuantity >= 2) {
+        <p class="discount">5% de réduction appliquée !</p>
+      }
+    </div>
+    <button type="submit" class="validate-btn">Acheter</button>
+  </form>
+</div>  
+  <dialog #ticketDialog>
+    <h3>Récapitulatif de l'achat</h3>
+    <p>Tickets : {{ ticketQuantity }}</p>
+    <p>Prix total : {{ totalPrice() | number:'1.2-2' }} €</p>
+    <p>Total en Doge : {{ totalInDoge() | number:'1.2-2' }} Ð</p>
+    <button (click)="closeModal(ticketDialog)">Fermer</button>
+  </dialog>

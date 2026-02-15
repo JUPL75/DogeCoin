@@ -4,4 +4,5 @@ export const routes: Routes = [
         { path: '', redirectTo: 'crypto-dashboard', pathMatch: 'full'},
         { path: 'crypto-dashboard', loadComponent: () => import('./features/crypto-dashboard/crypto-dashboard.component').then(m => m.CryptoDashboardComponent) },
         { path: 'best-exchange-platform', loadComponent: () => import('./features/best-exchange-platform/best-exchange-platform.component').then(m => m.BestExchangePlatformComponent) },
+        { path: 'buy-ticket', loadComponent: () => import('./features/buy-ticket/buy-ticket.component').then(m => m.BuyTicketComponent) },
 ];

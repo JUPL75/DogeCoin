@@ -11,9 +11,13 @@
           <p class="change24h">
             <span [class.up]="crypto.change24h > 0" [class.down]="crypto.change24h < 0"
             >
-              <ng-container *ngIf="crypto.change24h > 0">↗</ng-container>
-              <ng-container *ngIf="crypto.change24h < 0">↘</ng-container> 
-              {{ crypto.change24h | number:'1.2-2' }} % 
+            @if (crypto.change24h > 0) {
+              ↗
+            }
+            @if (crypto.change24h < 0) {
+              ↘
+            }
+            {{ crypto.change24h | number:'1.2-2' }} %
             </span> en 24h
           </p>
         </article>
