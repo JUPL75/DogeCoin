@@ -1,0 +1,31 @@
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+article {
+    border-bottom: 1px solid grey;
+    padding-bottom: 1rem;
+    header {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .change24h {
+        text-align: right;
+        margin: 0;
+    }
+
+    .up {
+        color: #16c784;
+    }
+
+    .down {
+        color: #ea3943;
+    }
+}

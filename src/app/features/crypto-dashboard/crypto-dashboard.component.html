@@ -1,4 +1,23 @@
 <div class="container">
   <h2>Les actifs à surveiller</h2>
-  <ul></ul>
+ <ul>
+    @for (crypto of cryptos(); track $index) {
+      <li>
+        <article>
+          <header>
+            <h3>{{crypto.id | titlecase}}</h3>
+            <p>{{ crypto.price | currency:'EUR':'symbol':'1.2-2' }}</p>
+          </header>
+          <p class="change24h">
+            <span [class.up]="crypto.change24h > 0" [class.down]="crypto.change24h < 0"
+            >
+              <ng-container *ngIf="crypto.change24h > 0">↗</ng-container>
+              <ng-container *ngIf="crypto.change24h < 0">↘</ng-container> 
+              {{ crypto.change24h | number:'1.2-2' }} % 
+            </span> en 24h
+          </p>
+        </article>
+      </li>
+    }
+  </ul>
 </div>
