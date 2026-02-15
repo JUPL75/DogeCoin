@@ -1,0 +1,30 @@
+nav {
+    ul {
+        display: flex;
+
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .nav-item {
+        padding: 0 1rem 0 1rem;
+        a {
+            color: #ffcf00;
+            text-decoration: none;
+            font-weight: 600;
+            font-family: sans-serif;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .nav-link.active {
+            color: #fff;
+            border-bottom: 1px solid #ffcf00;
+        }
+
+        .nav-link:hover {
+            color: #fff;
+            border-bottom: 1px solid #ffcf00;
+        }
+    }   
+}

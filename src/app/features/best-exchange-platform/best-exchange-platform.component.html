@@ -1,0 +1,9 @@
+<div class="container">
+    <h2>La meilleure plateforme d'échange</h2>
+  <article>
+    <h3>{{ bestExchangePlatform()?.name }}</h3>
+    <p>{{ bestExchangePlatform()?.description }}</p>
+    <a [href]="bestExchangePlatform()?.url" target="_blank" title="Voir le site {{ bestExchangePlatform()?.name }} - nouvelle fenêtre">Voir le site {{ bestExchangePlatform()?.name }}</a>
+  </article>
+</div>
+ 

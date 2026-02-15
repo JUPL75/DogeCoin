@@ -1,13 +1,6 @@
-import { Component, inject, effect } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CryptoService } from '../../services/crypto.service';
 import { CommonModule } from '@angular/common';
-
-interface Crypto {
-  id: string;
-  name: string;
-  price: number;
-  change24h: number;
-}
 
 @Component({
   selector: 'app-crypto-dasboard',
@@ -22,9 +15,5 @@ export class CryptoDashboardComponent {
 
   constructor() {
     this.#cryptoService.getCryptos();
-  
-    effect(() => {
-      console.log('Cryptos updated:', this.cryptos());
-    });
   }
 }
